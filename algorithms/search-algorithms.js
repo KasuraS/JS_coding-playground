@@ -93,9 +93,9 @@ function bracketMatcher(str) {
     if (char == leftBracket) bracketStack.push(char);
     // is rightBracket, remove the latest added from the stack
     else if (char == rightBracket) {
-      // the removed one is leftBracket
+      // remove a leftBracket if we have a match with a rightBracket
       if (bracketStack.length > 0) bracketStack.pop();
-      else bracketStack.push(char); // if empty push it (rightBracket) in the stack
+      else return 0; // false if no leftBrackets in the stack
     }
   }
 
