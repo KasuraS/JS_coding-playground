@@ -1,8 +1,12 @@
 module.exports = {
-  twoKUniqueCharLongestSubString,
+  twoUniqueCharLongestSubString,
 };
 
-function twoKUniqueCharLongestSubString(str) {
+/**
+ * @param {string} str
+ * @return {string} the longest substring with 2 unique characters starting at the 2nd character of a given string
+ */
+function twoUniqueCharLongestSubString(str) {
   let subString = ""; // current substring
   let subQueue = []; // substring queue
   let startIndex = 1;
@@ -67,5 +71,7 @@ function twoKUniqueCharLongestSubString(str) {
   //console.log(displaySubArray);
 
   // verify the last subString with the one in queue to return the longest one
-  return subString.length > subQueue[0].length ? subString : subQueue[0];
+  return subString.length >= (subQueue.length > 0 ? subQueue[0].length : 0) // subQueue is empty if we have at most one longest substring
+    ? subString
+    : subQueue[0];
 }
