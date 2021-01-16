@@ -1,0 +1,30 @@
+{
+  "name": "js_coding-playground",
+  "version": "1.0.0",
+  "description": "repo to practice javascript coding challenges",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./index.js",
+    "test": "mocha tests/**/*.js --exit --timeout 10000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git"
+  },
+  "keywords": [
+    "javascript",
+    "coding",
+    "algorithms",
+    "data",
+    "structures"
+  ],
+  "author": "KasuraS",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^8.2.1"
+  },
+  "engines": {
+    "node": "12.16.1"
+  }
+}
