@@ -15,4 +15,9 @@ describe("Search Challenge: ", () => {
     expect("abaaa").to.be.equal(search.twoUniqueCharLongestSubString("2abaaa"));
     expect("").to.be.equal(search.twoUniqueCharLongestSubString("2"));
   });
+
+  it("should return true if no brackets in the stack ; otherwise false", () => {
+    expect(1).to.be.equal(search.bracketMatcher("H(ello)((W)orld)!"));
+    expect(0).to.be.equal(search.bracketMatcher("H(ello)((World)!"));
+  });
 });

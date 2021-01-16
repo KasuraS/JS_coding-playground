@@ -1,10 +1,11 @@
 module.exports = {
   twoUniqueCharLongestSubString,
+  bracketMatcher,
 };
 
 /**
  * @param {string} str
- * @return {string} the longest substring with 2 unique characters starting at the 2nd character of a given string
+ * @return {string} returns the longest substring with 2 unique characters starting at the 2nd character of a given string ; otherwise empty
  */
 function twoUniqueCharLongestSubString(str) {
   let subString = ""; // current substring
@@ -74,4 +75,30 @@ function twoUniqueCharLongestSubString(str) {
   return subString.length >= (subQueue.length > 0 ? subQueue[0].length : 0) // subQueue is empty if we have at most one longest substring
     ? subString
     : subQueue[0];
+}
+
+/**
+ * @param {string} str
+ * @return {string} returns 1 if no brackets in the stack ; otherwise 0
+ */
+function bracketMatcher(str) {
+  let bracketStack = [];
+  const leftBracket = "(",
+    rightBracket = ")";
+
+  for (let index = 0; index < str.length; index++) {
+    let char = str[index];
+
+    // is leftBracket, push char in the stack
+    if (char == leftBracket) bracketStack.push(char);
+    // is rightBracket, remove the latest added from the stack
+    else if (char == rightBracket) {
+      // the removed one is leftBracket
+      if (bracketStack.length > 0) bracketStack.pop();
+      else bracketStack.push(char); // if empty push it (rightBracket) in the stack
+    }
+  }
+
+  // verify if the stack is empty
+  return bracketStack.length == 0 ? 1 : 0;
 }
