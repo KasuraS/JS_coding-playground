@@ -1,5 +1,5 @@
 const { expect } = require("chai");
-const search = require("../algorithms/search-algorithms");
+const search = require("../../algorithms/search-algorithms");
 
 describe("Tests for twoUniqueCharLongestSubString algorithm", () => {
   it("should return the longest substring with 2 unique chars starting at the 2nd char of a given string", () => {

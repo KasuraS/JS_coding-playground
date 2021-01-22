@@ -4,8 +4,10 @@
   "description": "repo to practice javascript coding challenges",
   "main": "index.js",
   "scripts": {
-    "start": "node ./index.js",
-    "test": "mocha tests/**/*.js --exit --timeout 10000"
+    "start": "nodemon --exec babel-node index.js",
+    "test-algo": "./node_modules/.bin/mocha ./tests/algorithms_tests/*.js --compilers js:@babel/register",
+    "test-data": "./node_modules/.bin/mocha ./tests/data_structures_tests/*.js --compilers js:@babel/register",
+    "dev": "nodemon --exec babel-node index.js"
   },
   "repository": {
     "type": "git",
@@ -20,11 +22,18 @@
   ],
   "author": "KasuraS",
   "license": "ISC",
-  "dependencies": {
-    "chai": "^4.2.0",
-    "mocha": "^8.2.1"
-  },
+  "dependencies": {},
   "engines": {
     "node": "12.16.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/node": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "@babel/register": "^7.12.10",
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0",
+    "nodemon": "^2.0.7"
   }
 }

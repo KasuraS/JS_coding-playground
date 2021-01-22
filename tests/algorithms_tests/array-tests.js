@@ -1,5 +1,5 @@
 const { expect } = require("chai");
-const array = require("../algorithms/array-algorithms");
+const array = require("../../algorithms/array-algorithms");
 
 describe("Tests for treeConstructor algorithm", () => {
   it("should return true if it is a valid binary tree", () => {

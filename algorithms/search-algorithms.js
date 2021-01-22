@@ -4,8 +4,8 @@ module.exports = {
 };
 
 /**
- * @param {string} str
- * @return {string} returns the longest substring with 2 unique characters starting at the 2nd character of a given string ; otherwise empty
+ * @param {String} str
+ * @return {String} returns the longest substring with 2 unique characters starting at the 2nd character of a given string ; otherwise empty
  */
 function twoUniqueCharLongestSubString(str) {
   let subString = ""; // current substring
@@ -78,8 +78,8 @@ function twoUniqueCharLongestSubString(str) {
 }
 
 /**
- * @param {string} str
- * @return {string} returns 1 if no brackets in the stack ; otherwise 0
+ * @param {String} str
+ * @return {Number} returns 1 if no brackets in the stack ; otherwise 0
  */
 function bracketMatcher(str) {
   let bracketStack = [];

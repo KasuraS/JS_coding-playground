@@ -3,7 +3,7 @@ module.exports = {
 };
 
 /**
- * @param {number} value
+ * @param {Number} value
  */
 class Node {
   constructor(value) {
@@ -14,8 +14,8 @@ class Node {
 }
 
 /**
- * @param {string} strArray
- * @return returns true if it is a valid binary tree ; otherwise false
+ * @param {String} strArray
+ * @return {Boolean} returns true if it is a valid binary tree ; otherwise false
  */
 function treeConstructor(strArray) {
   let nodePairsArray = strArray.split(";");
