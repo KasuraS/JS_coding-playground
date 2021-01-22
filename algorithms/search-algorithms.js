@@ -1,7 +1,14 @@
 module.exports = {
+  noRepeatCharLongestSubString,
   twoUniqueCharLongestSubString,
   bracketMatcher,
 };
+
+/**
+ * @param {String} str
+ * @return {String} returns the longest substring without two same characters
+ */
+function noRepeatCharLongestSubString(str) {}
 
 /**
  * @param {String} str

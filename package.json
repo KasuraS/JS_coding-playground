@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon --exec babel-node index.js",
-    "test-algo": "./node_modules/.bin/mocha ./tests/algorithms_tests/*.js --compilers js:@babel/register",
-    "test-data": "./node_modules/.bin/mocha ./tests/data_structures_tests/*.js --compilers js:@babel/register",
+    "test-algo": "mocha ./tests/algorithms_tests/*.js --compilers js:@babel/register",
+    "test-data": "mocha ./tests/data_structures_tests/*.js --compilers js:@babel/register",
     "dev": "nodemon --exec babel-node index.js"
   },
   "repository": {
