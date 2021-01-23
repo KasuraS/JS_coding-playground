@@ -1,22 +1,36 @@
 const { expect } = require("chai");
 const search = require("../../algorithms/search-algorithms");
 
-describe("Tests for twoUniqueCharLongestSubString algorithm", () => {
-  it("should return the longest substring with 2 unique chars starting at the 2nd char of a given string", () => {
-    expect("aaba").to.be.equal(
-      search.twoUniqueCharLongestSubString("2aabacbca")
+describe("Tests for noRepeatCharLongestSubString algorithm", () => {
+  it("should return the longest substring w/o 2 same characters of a given string", () => {
+    expect("zefgijlm").to.be.equal(
+      search.noRepeatCharLongestSubString("gezzezefgijlmm")
     );
+    expect("efcad").to.be.equal(
+      search.noRepeatCharLongestSubString("aabacbzzzeeefcadedee")
+    );
+  });
+});
+
+describe("Tests for KUniqueCharLongestSubString algorithm", () => {
+  it("should return the longest substring with 2 unique chars of a given string", () => {
+    expect("aaba").to.be.equal(search.KUniqueCharLongestSubString("2aabacbca"));
     expect("dedee").to.be.equal(
-      search.twoUniqueCharLongestSubString("2aabacbcadedee")
+      search.KUniqueCharLongestSubString("2aabacbcadedee")
     );
     expect("zzzeee").to.be.equal(
-      search.twoUniqueCharLongestSubString("2aabacbzzzeeefcadedee")
+      search.KUniqueCharLongestSubString("2aabacbzzzeeefcadedee")
     );
-    expect("abaaa").to.be.equal(search.twoUniqueCharLongestSubString("2abaaa"));
+    expect("abaaa").to.be.equal(search.KUniqueCharLongestSubString("2abaaa"));
   });
 
-  it("should return empty if string contains at most 1 char", () => {
-    expect("").to.be.equal(search.twoUniqueCharLongestSubString("2"));
+  it("should return the longest substring with 4 unique chars starting at the 2nd character of a given string", () => {
+    expect("aabacbcad").to.be.equal(
+      search.KUniqueCharLongestSubString("4aabacbcadedee", 4, 1)
+    );
+    expect("aabacbzzz").to.be.equal(
+      search.KUniqueCharLongestSubString("4aabacbzzzeeefcadedee", 4, 1)
+    );
   });
 });
 
