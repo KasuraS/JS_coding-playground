@@ -1,6 +1,80 @@
 module.exports = {
+  twoSum,
+  threeSum,
   treeConstructor,
 };
+
+/**
+ * @param {Array<Number>} intArray sorted array of integers
+ * @param {Number} target the sum of three elements in the given array
+ * @return returns an array of all possible combinations with the three operands that gives the sum of 0
+ */
+function threeSum(intArray) {
+  let refIndex = 0;
+  let startIndex = 1;
+  let endIndex = intArray.length - 1;
+  let solutions = {};
+
+  // in case of unsorted array, use:
+  // intArray.sort()
+
+  while (true) {
+    if (startIndex == endIndex) {
+      refIndex++;
+      startIndex = refIndex + 1;
+      endIndex = intArray.length - 1;
+    } else if (startIndex > endIndex) return Object.values(solutions);
+    else {
+      let a = intArray[refIndex];
+      let b = intArray[startIndex];
+      let c = intArray[endIndex];
+      let sum = a + b + c;
+
+      if (sum == 0) {
+        let solution = [a, b, c];
+
+        let key = `${a};${b};${c}`;
+
+        if (!Object.keys(solutions).includes(key)) solutions[key] = solution;
+        startIndex++;
+      } else {
+        if (sum > 0) endIndex--;
+        else {
+          startIndex++;
+        }
+      }
+    }
+  }
+}
+
+/**
+ * @param {Array<Number>} intArray sorted array of strictly positive unique integers (> 0)
+ * @param {Number} target the sum of two elements in the given array
+ * @return returns an array of indexes of the two operands
+ */
+function twoSum(intArray, target) {
+  let startIndex = 0;
+  let endIndex = intArray.length - 1;
+
+  // in case of unsorted array, use:
+  // intArray.sort()
+
+  while (true) {
+    if (startIndex > endIndex) return [];
+    else {
+      let sum = intArray[startIndex] + intArray[endIndex];
+
+      if (sum === target) {
+        return [startIndex, endIndex];
+      } else {
+        if (sum > target) endIndex--;
+        else {
+          startIndex++;
+        }
+      }
+    }
+  }
+}
 
 /**
  * @param {Number} value
